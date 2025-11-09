@@ -10,6 +10,7 @@ COPY ChallangeMottu.Api/ChallangeMottu.Api.csproj ChallangeMottu.Api/
 COPY ChallangeMottu.Application/ChallangeMottu.Application.csproj ChallangeMottu.Application/
 COPY ChallangeMottu.Domain/ChallangeMottu.Domain.csproj ChallangeMottu.Domain/
 COPY ChallangeMottu.Infrastructure/ChallangeMottu.Infrastructure.csproj ChallangeMottu.Infrastructure/
+COPY ChallangeMottu.Tests/ChallangeMottu.Tests.csproj ChallangeMottu.Tests/
 
 # Restaurar dependências
 RUN dotnet restore
