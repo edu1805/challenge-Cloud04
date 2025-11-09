@@ -324,3 +324,5 @@ A API possui duas versões:
 ## 📄 Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte do desafio da FIAP.
+
+Teste de pipeline
