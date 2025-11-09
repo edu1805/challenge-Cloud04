@@ -8,18 +8,18 @@ public class LocalizacaoAtualMapping : IEntityTypeConfiguration<LocalizacaoAtual
 {
     public void Configure(EntityTypeBuilder<LocalizacaoAtual> builder)
     {
-        builder.ToTable("T_LOCALIZACAO_ATUAL-MOTTU");
+        builder.ToTable("T_LOCALIZACAO_ATUAL_MOTTU");
 
         builder.HasKey(l => l.Id);
         builder.Property(l => l.Id)
             .HasColumnName("ID")
-            .HasColumnType("RAW(16)")
+            .HasColumnType("uniqueidentifier")
             .IsRequired()
-            .HasDefaultValueSql("SYS_GUID()");
+            .HasDefaultValueSql("NEWID()");
 
-        builder.Property(l => l.CoordenadaX).IsRequired();
-        builder.Property(l => l.CoordenadaY).IsRequired();
-        builder.Property(l => l.DataHoraAtualizacao).IsRequired();
+        builder.Property(l => l.CoordenadaX).IsRequired().HasColumnType("float");
+        builder.Property(l => l.CoordenadaY).IsRequired().HasColumnType("float");
+        builder.Property(l => l.DataHoraAtualizacao).IsRequired().HasColumnType("datetime2");
 
         builder.HasOne(l => l.Moto)
             .WithMany()
